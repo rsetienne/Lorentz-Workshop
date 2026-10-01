@@ -4,9 +4,8 @@ generations <- 100000
 burnin <- 20000
 moves = VectorMoves()
 monitors = VectorMonitors()
-chars <- readDiscreteCharacterData("tail-armor.nex")
+chars <- readDiscreteCharacterData("d:\\data\\ms\\Lorentz-Workshop\\book\\day2\\tail-armor.nex")
 taxa <- chars.taxa()
-
 speciation_rate ~ dnExponential(10.0)
 moves.append(mvScale(speciation_rate, weight=3))
 timetree ~ dnBDP(lambda=speciation_rate, rho=1.0, rootAge=1.0,
